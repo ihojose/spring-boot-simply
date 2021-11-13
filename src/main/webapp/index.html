@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="main">
+
+<div ng-controller="$product">
+
+    <h2>Crear Producto</h2>
+    <form ng-submit="create()">
+        <input ng-model="productC.image" placeholder="URL Imagen"><br>
+        <input ng-model="productC.name" placeholder="Nombre"><br>
+        <input ng-model="productC.description" placeholder="Descripción"><br>
+        <input ng-model="productC.price" placeholder="Precio"><br>
+
+        <button type="submit">Crear producto</button>
+    </form>
+
+    <h1>Productos</h1>
+    <table>
+        <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Precio</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="p in products">
+            <td>
+                <img src="{{p.image}}" width="50" height="50">
+            </td>
+            <td>{{p.name}}</td>
+            <td>{{p.description}}</td>
+            <td>${{p.price}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="application.js"></script>
+</body>
+</html>

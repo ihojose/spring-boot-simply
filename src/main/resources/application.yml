@@ -1,0 +1,6 @@
+spring:
+  datasource:
+    url: HOST
+    username: USERNAME
+    password: PASSWORD
+    driver-class-name: com.mysql.jdbc.Driver
